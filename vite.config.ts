@@ -11,6 +11,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig(({ command }) => {
   return {
+    server: {
+      watch: {
+        ignored: ["**/.output/**", "**/.wrangler/**", "**/dist/**"],
+      },
+    },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),

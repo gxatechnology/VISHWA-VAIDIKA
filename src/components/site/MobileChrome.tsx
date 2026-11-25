@@ -15,7 +15,7 @@ export function MobileHeader({ onOpenMenu, isMenuOpen = false }: MobileHeaderPro
         <Link
           to="/"
           className="flex items-center gap-2 min-w-0 group focus:outline-hidden"
-          aria-label="Vishwa Vaidika Sanatan Hindu Temple Heritage Home"
+          aria-label="Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited Home"
         >
           <div className="relative h-11 w-auto shrink-0 flex items-center">
             <img
@@ -264,13 +264,11 @@ export function NavDrawer({ open, onClose }: NavDrawerProps) {
 
           <a
             className="w-full h-10 bg-primary text-on-primary font-label-ui text-[12px] uppercase tracking-wider font-semibold rounded-lg flex items-center justify-center gap-2 shadow-sm hover:bg-primary-container transition-colors"
-            href={WHATSAPP_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={PHONE_HREF}
             tabIndex={open ? 0 : -1}
           >
-            <span className="material-symbols-outlined text-[18px]">chat</span>
-            <span>WhatsApp Consultation</span>
+            <span className="material-symbols-outlined text-[18px]">call</span>
+            <span>Call Sthapati: {PHONE}</span>
           </a>
 
           <div className="flex flex-col items-center gap-1 pt-1 font-label-monument text-[10px] uppercase tracking-widest text-on-surface-variant">

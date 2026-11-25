@@ -29,11 +29,11 @@ export function ServicesScreen() {
               <div className="inline-flex items-center gap-2.5 px-3 py-1 bg-surface rounded-4xl shadow-xs border border-gold/20">
                 <span className="w-2 h-2 rounded-4xl bg-secondary"></span>
                 <span className="font-label-monument text-label-monument text-primary uppercase font-bold tracking-wider">
-                  Canonical Portfolio & Master Capabilities
+                  Official Client Portfolio & Master Capabilities
                 </span>
                 <span className="text-stone-hairline text-body-sm">•</span>
                 <span className="font-label-ui text-label-ui text-on-surface-variant font-medium">
-                  5 Categories • 39 Services
+                  6 Sections • 42 Services
                 </span>
               </div>
               <div className="hidden md:flex items-center gap-6 font-label-monument text-label-monument text-stone-hairline uppercase tracking-widest text-[11px]">
@@ -64,8 +64,8 @@ export function ServicesScreen() {
               <div className="lg:col-span-4 bg-surface p-6 rounded-xl border border-gold/20 shadow-xs flex flex-col justify-between">
                 <p className="font-body-md text-body-md text-on-surface leading-relaxed">
                   Conforming to classical Shilpa Shastras and modern structural engineering,{" "}
-                  <strong className="text-primary font-semibold">Vishwa Vaidika Sanatan Hindu Temple Heritage Pvt. Ltd.</strong>{" "}
-                  delivers 39 specialized disciplines across five core corporate categories.
+                  <strong className="text-primary font-semibold">Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited</strong>{" "}
+                  delivers 42 specialized disciplines across six core corporate sections.
                 </p>
                 <div className="pt-4 mt-4 border-t border-stone-hairline/20 flex items-center justify-between font-label-ui text-label-ui text-secondary">
                   <span className="flex items-center gap-1.5 font-bold">
@@ -80,7 +80,7 @@ export function ServicesScreen() {
             </div>
 
             {/* Quick Metrics Strip */}
-            <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 pt-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 pt-4">
               {SERVICE_CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
@@ -102,7 +102,7 @@ export function ServicesScreen() {
                     {cat.shortTitle}
                   </div>
                   <div className={`text-[10px] uppercase tracking-wider font-semibold pt-1 ${activeTab === cat.id ? "text-gold" : "text-on-surface-variant"}`}>
-                    {cat.code}
+                    Section {cat.code}
                   </div>
                 </button>
               ))}
@@ -129,9 +129,9 @@ export function ServicesScreen() {
                 }`}
                 data-category="all"
               >
-                <span>All Disciplines</span>
+                <span>All Services</span>
                 <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${activeTab === "all" ? "bg-saffron text-white" : "bg-surface text-primary"}`}>
-                  39
+                  42
                 </span>
               </button>
 
@@ -158,7 +158,7 @@ export function ServicesScreen() {
 
             <div className="hidden lg:flex items-center gap-2 text-primary font-label-monument text-[11px] uppercase tracking-widest shrink-0">
               <span className="w-2 h-2 rounded-full bg-saffron animate-pulse"></span>
-              <span>All 39 Confirmed Reference Services</span>
+              <span>All 42 Official Client-Approved Services</span>
             </div>
           </div>
         </nav>
@@ -221,7 +221,7 @@ export function ServicesScreen() {
         )}
 
         {/* ========================================================= */}
-        {/* COMPREHENSIVE SERVICE MONOGRAPH SECTIONS (ALL 39 SERVICES) */}
+        {/* COMPREHENSIVE SERVICE MONOGRAPH SECTIONS (ALL 42 SERVICES) */}
         {/* ========================================================= */}
         <section className="w-full px-gutter py-space-xl bg-surface">
           <div className="max-w-7xl mx-auto flex flex-col gap-16">
@@ -234,10 +234,10 @@ export function ServicesScreen() {
                     <div className="flex flex-col space-y-2 max-w-3xl">
                       <div className="flex items-center gap-2 text-secondary font-label-monument text-label-monument uppercase tracking-widest font-bold">
                         <span className="material-symbols-outlined text-[20px]">{cat.icon}</span>
-                        <span>{cat.code} • {cat.badge}</span>
+                        <span>SECTION {cat.code} • {cat.badge}</span>
                       </div>
                       <h2 className="font-headline-lg text-headline-lg text-primary tracking-tight">
-                        {cat.title}
+                        {cat.code}. {cat.title}
                       </h2>
                       <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
                         {cat.overview}
@@ -248,7 +248,7 @@ export function ServicesScreen() {
                         {cat.count}
                       </span>
                       <span className="font-label-monument text-[10px] uppercase tracking-wider text-on-surface-variant text-right">
-                        Canonical Services
+                        Official Services
                       </span>
                     </div>
                   </div>

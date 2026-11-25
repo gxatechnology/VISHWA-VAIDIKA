@@ -15,7 +15,7 @@ export function SiteHeader({ onOpenMenu, isMenuOpen = false }: SiteHeaderProps) 
         <Link
           to="/"
           className="flex items-center gap-3 shrink-0 group focus:outline-hidden"
-          aria-label="Vishwa Vaidika Sanatan Hindu Temple Heritage Home"
+          aria-label="Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited Home"
         >
           <div className="relative h-14 lg:h-16 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105 flex items-center">
             <img
@@ -32,8 +32,8 @@ export function SiteHeader({ onOpenMenu, isMenuOpen = false }: SiteHeaderProps) 
             <span className="font-title-editorial text-[13px] leading-tight tracking-[0.12em] uppercase font-bold text-primary-container whitespace-nowrap">
               Vishwa Vaidika Sanatan
             </span>
-            <span className="font-label-monument text-[9.5px] leading-tight tracking-[0.14em] uppercase font-semibold text-gold whitespace-nowrap">
-              Hindu Temple Heritage Pvt. Ltd.
+            <span className="font-label-monument text-[9px] leading-tight tracking-[0.14em] uppercase font-semibold text-gold whitespace-nowrap">
+              Hindu Temple Heritage Private Limited
             </span>
           </div>
         </Link>

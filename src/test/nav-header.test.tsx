@@ -11,6 +11,7 @@ import {
 } from "@tanstack/react-router";
 import { routeTree } from "@/routeTree.gen";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
 import { MobileHeader, NavDrawer } from "@/components/site/MobileChrome";
 import { NAV_LINKS } from "@/components/site/nav-links";
 import { IMG } from "@/components/site/images";
@@ -79,10 +80,11 @@ describe("Routing and Navigation Destinations", () => {
 });
 
 describe("Logo Asset Integrity", () => {
-  it("uses the transparent circular derivative with preserved artwork", () => {
-    expect(IMG.logo).toBe("/vvs-approved-circular-transparent.png");
-    expect(IMG.logoOriginal).toBe("/vvs-approved-circular.png");
+  it("uses the approved crest derivative with preserved artwork", () => {
     expect(IMG.crest).toBe("/vvs-approved-crest.png");
+    expect(IMG.crestWebp).toBe("/vvs-approved-crest.webp");
+    expect(IMG.logoOriginal).toBe("/vvs-approved-crest-original.png");
+    expect(IMG.legacyCircularLogo).toBe("/vvs-approved-circular-transparent.png");
   });
 });
 
@@ -92,13 +94,13 @@ describe("SiteHeader Desktop Component", () => {
     await renderWithRouter(<SiteHeader onOpenMenu={onOpenMenu} isMenuOpen={false} />);
 
     // Brand and logo
-    const emblem = screen.getByAltText(/Vishwa Vaidika Sanatan temple emblem/i);
+    const emblem = screen.getByAltText(/Vishwa Vaidika Sanatan Hindu Temple Heritage Crest/i);
     expect(emblem).toBeDefined();
-    expect(emblem.getAttribute("src")).toBe(IMG.logo);
-    expect(emblem.className).toContain("rounded-full");
+    expect(emblem.getAttribute("src")).toBe(IMG.crest);
+    expect(emblem.className).toContain("object-contain");
 
     expect(screen.getByText(/Vishwa Vaidika Sanatan/i)).toBeDefined();
-    expect(screen.getByText(/Hindu Temple Heritage Pvt. Ltd./i)).toBeDefined();
+    expect(screen.getByText(/Hindu Temple Heritage Private Limited/i)).toBeDefined();
 
     // 7 navigation links
     NAV_LINKS.forEach((link) => {
@@ -123,9 +125,9 @@ describe("MobileHeader Component", () => {
     const onOpenMenu = vi.fn();
     await renderWithRouter(<MobileHeader onOpenMenu={onOpenMenu} isMenuOpen={false} />);
 
-    const emblem = screen.getByAltText(/Vishwa Vaidika Sanatan temple emblem/i);
+    const emblem = screen.getByAltText(/Vishwa Vaidika Sanatan Hindu Temple Heritage Crest/i);
     expect(emblem).toBeDefined();
-    expect(emblem.className).toContain("rounded-full");
+    expect(emblem.className).toContain("object-contain");
 
     expect(screen.getByText(/VVS Temple Heritage/i)).toBeDefined();
 
@@ -171,5 +173,26 @@ describe("NavDrawer Component", () => {
     const homeLink = screen.getAllByText("Home")[0];
     fireEvent.click(homeLink);
     expect(onClose).toHaveBeenCalledTimes(3);
+  });
+});
+
+describe("SiteFooter Component", () => {
+  it("renders exact company name and dynamic copyright year", async () => {
+    await renderWithRouter(<SiteFooter />);
+
+    // Brand and logo
+    const emblem = screen.getByAltText(/Vishwa Vaidika Sanatan Hindu Temple Heritage Crest/i);
+    expect(emblem).toBeDefined();
+
+    // Full legal name
+    const companyMatches = screen.getAllByText(/Vishwa Vaidika Sanatan/i);
+    expect(companyMatches.length).toBeGreaterThanOrEqual(1);
+    const subtitleMatches = screen.getAllByText(/Hindu Temple Heritage Private Limited/i);
+    expect(subtitleMatches.length).toBeGreaterThanOrEqual(1);
+
+    // Dynamic copyright year
+    const currentYear = new Date().getFullYear();
+    const copyrightRegex = new RegExp(`©\\s*${currentYear}\\s*Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited`, "i");
+    expect(screen.getByText(copyrightRegex)).toBeDefined();
   });
 });

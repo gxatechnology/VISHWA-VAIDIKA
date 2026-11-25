@@ -84,9 +84,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Vishwa Vaidika Sanatan Hindu Temple Heritage Pvt. Ltd. — temple construction, Vastu planning, stone craftsmanship and heritage restoration.",
+          "Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited — temple construction, Vastu planning, stone craftsmanship and heritage restoration.",
       },
-      { name: "author", content: "Vishwa Vaidika Sanatan Hindu Temple Heritage Pvt. Ltd." },
+      { name: "author", content: "Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#4a0411" },

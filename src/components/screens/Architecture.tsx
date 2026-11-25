@@ -1420,37 +1420,42 @@ export function ArchitectureScreen() {
                     call
                   </span>{" "}
                   <span className="font-body-sm text-body-sm font-semibold tracking-wider">
-                    Direct Liaison: +91 9941121111
-                  </span>{" "}
-                </div>{" "}
-              </div>{" "}
-            </div>{" "}
+                    Primary: +91 99411 21111 • Secondary: +91 75170 15555
+                  </span>
+                </div>
+              </div>
+            </div>
             <div className="lg:col-span-4 flex flex-col space-y-4 bg-primary p-6 rounded-xl shadow-lg">
-              {" "}
               <span className="font-title-editorial text-title-editorial text-on-primary font-semibold">
                 Initiate Sthapati Advisory
-              </span>{" "}
+              </span>
               <p className="font-body-sm text-body-sm text-primary-fixed leading-relaxed">
-                {" "}
                 Request certified stone samples, quarry chemical assays, or arrange a private
-                consultation with our Chief Sthapati council.{" "}
-              </p>{" "}
+                consultation with our Chief Sthapati council.
+              </p>
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-secondary-container text-on-secondary-container font-label-ui text-label-ui uppercase tracking-widest font-bold rounded-xs shadow-sm hover:bg-secondary-fixed transition-colors"
               >
-                {" "}
-                <span>Schedule Patron Session</span>{" "}
-                <span className="material-symbols-outlined text-[18px]">calendar_today</span>{" "}
-              </Link>{" "}
-              <a
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary-container text-on-primary font-label-ui text-label-ui uppercase tracking-widest font-semibold rounded-xs hover:bg-charcoal-monolith transition-colors"
-                href="tel:9941121111"
-              >
-                {" "}
-                <span className="material-symbols-outlined text-[18px]">call</span>{" "}
-                <span>Call: 9941121111</span>{" "}
-              </a>{" "}
+                <span>Schedule Patron Session</span>
+                <span className="material-symbols-outlined text-[18px]">calendar_today</span>
+              </Link>
+              <div className="flex flex-col gap-2">
+                <a
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary font-label-ui text-label-ui uppercase tracking-widest font-semibold rounded-xs hover:bg-charcoal-monolith transition-colors text-[12px]"
+                  href="tel:+919941121111"
+                >
+                  <span className="material-symbols-outlined text-[16px]">call</span>
+                  <span>Primary: +91 99411 21111</span>
+                </a>
+                <a
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-primary-container text-on-primary font-label-ui text-label-ui uppercase tracking-widest font-semibold rounded-xs hover:bg-charcoal-monolith transition-colors text-[12px] border border-gold/30"
+                  href="tel:+917517015555"
+                >
+                  <span className="material-symbols-outlined text-[16px]">phone_enabled</span>
+                  <span>Secondary: +91 75170 15555</span>
+                </a>
+              </div>{" "}
             </div>{" "}
           </div>{" "}
         </section>{" "}

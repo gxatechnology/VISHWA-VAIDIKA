@@ -549,31 +549,26 @@ export function HomeMobileScreen() {
         <aside className="sticky bottom-20 z-40 self-end mr-margin-mobile -mt-space-lg mb-space-sm">
           {" "}
           <a
-            aria-label="Direct Sthapati WhatsApp Consultation"
+            aria-label="Direct Phone Consultation"
             className="inline-flex items-center gap-2 px-3.5 py-2.5 bg-charcoal-monolith text-on-tertiary rounded-4xl shadow-xl active:scale-95 transition-transform hover:bg-primary"
-            href="https://wa.me/919941121111"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+919941121111"
           >
-            {" "}
             <div className="w-6 h-6 rounded-4xl bg-secondary-container flex items-center justify-center text-on-secondary-container">
-              {" "}
               <span
                 className="material-symbols-outlined text-[16px]"
                 style={{ fontVariationSettings: "'FILL' 1" }}
               >
-                chat
-              </span>{" "}
-            </div>{" "}
+                call
+              </span>
+            </div>
             <div className="flex flex-col text-left pr-1">
-              {" "}
               <span className="font-label-monument text-[9px] uppercase tracking-widest text-secondary-fixed leading-none">
-                Instant
-              </span>{" "}
+                Direct
+              </span>
               <span className="font-label-ui text-[12px] font-semibold text-surface-bright leading-tight">
-                WhatsApp Peetham
-              </span>{" "}
-            </div>{" "}
+                Call Sthapati
+              </span>
+            </div>
           </a>{" "}
         </aside>{" "}
       </div>{" "}
@@ -603,15 +598,13 @@ export function HomeMobileScreen() {
           </div>
           <a
             className="inline-flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-highest/10 rounded-lg text-secondary-fixed text-label-monument font-label-monument uppercase tracking-wider"
-            href="https://wa.me/919941121111"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+919941121111"
           >
-            <span className="material-symbols-outlined text-[16px]">chat_bubble</span>Quick Connect
+            <span className="material-symbols-outlined text-[16px]">call</span>Call Sthapati
           </a>
         </div>
         <p className="font-label-monument text-label-monument text-stone-hairline uppercase pt-space-xs">
-          © Vishwa Vaidika Sanatan Hindu Temple Heritage
+          © {new Date().getFullYear()} Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited. All rights reserved.
         </p>
       </footer>
     </main>

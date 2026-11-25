@@ -753,7 +753,7 @@ export function ProjectDetailScreen() {
               </Link>{" "}
               <a
                 className="w-full sm:w-auto px-space-lg py-space-md bg-transparent hover:bg-surface-bright/10 text-surface-bright rounded-xs font-label-ui text-label-ui uppercase tracking-wider transition-colors text-center flex items-center justify-center gap-space-xs"
-                href="mailto:contact@vishwaveidika.com?subject=Specimen%20Dossier%20Request"
+                href="mailto:contact@vishwavaidika.com?subject=Specimen%20Dossier%20Request"
               >
                 {" "}
                 <span className="material-symbols-outlined text-[18px]">mail</span>{" "}

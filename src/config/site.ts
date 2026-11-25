@@ -8,10 +8,12 @@
 export const SITE_CONFIG = {
   // Official Legal Company Name (Spelling: VAIDIKA, NOT VEIDIKA)
   legalName: "VISHWA VAIDIKA SANATAN HINDU TEMPLE HERITAGE PRIVATE LIMITED",
+  legalNameTitleCase: "Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited",
   shortName: "VVS Temple Heritage",
   initials: "VVS",
   tagline: "Preserving Sacred Heritage Through Timeless Architecture",
   subTagline: "Vedic Shilpa Shastra Architecture, Heavy Civil Engineering & Master Stonework",
+  copyrightYear: new Date().getFullYear(),
 
   // Corporate Contact Coordinates (Client-Approved Retention)
   contact: {

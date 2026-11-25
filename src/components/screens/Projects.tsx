@@ -993,13 +993,10 @@ export function ProjectsScreen() {
               </Link>{" "}
               <a
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md bg-surface text-primary hover:bg-surface-container rounded-lg font-label-ui text-label-ui uppercase tracking-wider shadow-xs transition-all duration-200"
-                href="https://wa.me/919876543210"
-                rel="noopener noreferrer"
-                target="_blank"
+                href="tel:+919941121111"
               >
-                {" "}
-                <span className="material-symbols-outlined text-[18px]">chat</span>{" "}
-                <span>WHATSAPP LIAISON</span>{" "}
+                <span className="material-symbols-outlined text-[18px]">call</span>
+                <span>CALL +91 99411 21111</span>
               </a>{" "}
             </div>{" "}
           </div>{" "}

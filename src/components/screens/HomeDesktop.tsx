@@ -790,15 +790,12 @@ export function HomeDesktopScreen() {
                 </Link>{" "}
                 <a
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 bg-surface-container hover:bg-surface-container-high text-primary-container font-label-ui text-label-ui uppercase tracking-wider font-semibold rounded-lg shadow-xs transition-all"
-                  href="https://wa.me/919876543210"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                  href="tel:+919941121111"
                 >
-                  {" "}
-                  <span className="material-symbols-outlined text-[20px] text-green-700">
-                    chat
-                  </span>{" "}
-                  <span>WhatsApp Liaison</span>{" "}
+                  <span className="material-symbols-outlined text-[20px] text-primary">
+                    call
+                  </span>
+                  <span>Direct Hotline: +91 99411 21111</span>
                 </a>{" "}
               </div>{" "}
               <div className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-on-surface-variant font-body-sm text-[13px]">

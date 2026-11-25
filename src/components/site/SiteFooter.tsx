@@ -34,7 +34,7 @@ export function SiteFooter({ className = "" }: { className?: string }) {
                   Vishwa Vaidika Sanatan
                 </span>
                 <span className="font-label-monument text-[11px] leading-tight tracking-[0.18em] uppercase font-semibold text-gold">
-                  Hindu Temple Heritage Pvt. Ltd.
+                  Hindu Temple Heritage Private Limited
                 </span>
               </div>
             </div>
@@ -144,7 +144,7 @@ export function SiteFooter({ className = "" }: { className?: string }) {
           </div>
         </div>
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-[13px] text-stone-hairline">
-          <p>© 2025 Vishwa Vaidika Sanatan Hindu Temple Heritage Pvt. Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span className="hover:text-sandstone-surface cursor-pointer transition-colors">
               Architectural Ethics

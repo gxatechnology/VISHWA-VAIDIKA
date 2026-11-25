@@ -2,6 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { IMG } from "@/components/site/images";
 import { useScreenScript } from "@/components/site/use-screen-script";
 import { setup } from "./scripts/ContactMobile";
+import { SERVICE_CATEGORIES, getServicesByCategory } from "@/data/services-data";
+import { PHONE, PHONE_HREF, PHONE_SECONDARY, PHONE_SECONDARY_HREF } from "@/components/site/nav-links";
 
 /* Generated from the Stitch design export (screen 13). */
 export function ContactMobileScreen() {
@@ -9,72 +11,75 @@ export function ContactMobileScreen() {
   return (
     <main className="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface">
       <div className="flex flex-col w-full pb-24">
-        {" "}
         <section className="px-margin-mobile pt-space-lg pb-space-md flex flex-col items-center text-center">
-          {" "}
-          <div className="relative mb-space-sm">
-            {" "}
-            <div className="w-20 h-20 rounded-4xl bg-surface-container flex items-center justify-center shadow-md p-1">
-              {" "}
+          <div className="relative mb-space-sm flex items-center justify-center">
+            <div className="h-16 w-auto max-w-xs rounded-xl bg-surface-container/60 flex items-center justify-center shadow-md p-2 border border-gold/20">
               <img
-                alt="Ornate Vishwa Vaidika Temple Emblem"
-                className="w-full h-full object-contain rounded-full aspect-square"
-                src={IMG.logo}
-              />{" "}
-            </div>{" "}
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-4xl bg-secondary text-on-secondary flex items-center justify-center shadow-xs">
-              {" "}
-              <span className="material-symbols-outlined text-[14px]">architecture</span>{" "}
-            </div>{" "}
-          </div>{" "}
+                alt="Ornate Vishwa Vaidika Temple Crest"
+                className="h-full w-auto max-h-12 object-contain"
+                src={IMG.crest}
+              />
+            </div>
+          </div>
           <span className="font-label-monument text-label-monument uppercase tracking-widest text-secondary font-semibold mb-1">
-            {" "}
-            Direct Touchpoints for Temple Trustees, Mahants & Patrons{" "}
-          </span>{" "}
+            Direct Touchpoints for Temple Trustees, Mahants & Patrons
+          </span>
           <h2 className="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-medium mb-1">
-            {" "}
-            Contact & Consultation{" "}
-          </h2>{" "}
+            Contact & Consultation
+          </h2>
           <p className="font-title-editorial text-title-editorial italic text-on-surface-variant max-w-xs">
-            {" "}
-            “Let's Build Something Timeless.”{" "}
-          </p>{" "}
+            “Let's Build Something Timeless.”
+          </p>
           <div className="flex items-center justify-center gap-space-sm w-36 mt-space-sm mb-space-xs">
-            {" "}
-            <span className="h-[1px] flex-1 bg-outline-variant/60"></span>{" "}
-            <span className="w-1.5 h-1.5 rotate-45 bg-secondary"></span>{" "}
-            <span className="h-[1px] flex-1 bg-outline-variant/60"></span>{" "}
-          </div>{" "}
-        </section>{" "}
+            <span className="h-[1px] flex-1 bg-outline-variant/60"></span>
+            <span className="w-1.5 h-1.5 rotate-45 bg-secondary"></span>
+            <span className="h-[1px] flex-1 bg-outline-variant/60"></span>
+          </div>
+        </section>
         <section className="px-margin-mobile mb-space-lg">
-          {" "}
           <div className="bg-surface-container-high rounded-xl p-space-sm shadow-xs flex flex-col gap-space-xs">
-            {" "}
             <a
               className="flex items-center justify-between w-full px-space-md py-3 rounded-lg bg-primary text-on-primary shadow-xs active:scale-[0.98] transition-transform"
-              href="tel:9941121111"
+              href={PHONE_HREF}
             >
-              {" "}
               <div className="flex items-center gap-space-sm">
-                {" "}
                 <div className="w-8 h-8 rounded-4xl bg-on-primary-fixed-variant/40 flex items-center justify-center text-on-primary">
-                  {" "}
-                  <span className="material-symbols-outlined text-[18px]">call</span>{" "}
-                </div>{" "}
+                  <span className="material-symbols-outlined text-[18px]">call</span>
+                </div>
                 <div className="flex flex-col text-left">
-                  {" "}
                   <span className="font-label-monument text-[10px] uppercase tracking-wider text-primary-fixed-dim">
-                    Direct Sanctuary Hotline
-                  </span>{" "}
+                    Primary Hotline
+                  </span>
                   <span className="font-label-ui text-label-ui font-semibold">
-                    Call Sthapati Council: 9941121111
-                  </span>{" "}
-                </div>{" "}
-              </div>{" "}
+                    Call Sthapati: {PHONE}
+                  </span>
+                </div>
+              </div>
               <span className="material-symbols-outlined text-primary-fixed-dim text-[20px]">
                 arrow_forward
-              </span>{" "}
-            </a>{" "}
+              </span>
+            </a>
+            <a
+              className="flex items-center justify-between w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-primary shadow-xs active:scale-[0.98] transition-transform border border-gold/20"
+              href={PHONE_SECONDARY_HREF}
+            >
+              <div className="flex items-center gap-space-sm">
+                <div className="w-8 h-8 rounded-4xl bg-surface-container-high flex items-center justify-center text-primary">
+                  <span className="material-symbols-outlined text-[18px]">phone_enabled</span>
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="font-label-monument text-[10px] uppercase tracking-wider text-on-surface-variant">
+                    Secondary Office Line
+                  </span>
+                  <span className="font-label-ui text-label-ui font-semibold">
+                    {PHONE_SECONDARY}
+                  </span>
+                </div>
+              </div>
+              <span className="material-symbols-outlined text-secondary text-[20px]">
+                call
+              </span>
+            </a>
             <a
               className="flex items-center justify-between w-full px-space-md py-3 rounded-lg bg-surface-container-lowest text-on-surface shadow-xs active:scale-[0.98] transition-transform"
               href="https://wa.me/919941121111?text=Pranam%20Sthapati%20Council,%20we%20wish%20to%20consult%20regarding%20a%20temple%20project."
@@ -91,16 +96,15 @@ export function ContactMobileScreen() {
                 <div className="flex flex-col text-left">
                   {" "}
                   <div className="flex items-center gap-1.5">
-                    {" "}
                     <span className="font-label-ui text-label-ui font-semibold text-on-surface">
-                      WhatsApp Consultation
-                    </span>{" "}
-                    <span className="bg-whatsapp/20 text-success text-[10px] font-bold px-1.5 py-0.5 rounded-xs tracking-wide uppercase">
-                      Active
-                    </span>{" "}
-                  </div>{" "}
+                      WhatsApp Messaging
+                    </span>
+                    <span className="bg-amber-100 text-amber-800 border border-amber-300 text-[9px] font-bold px-1.5 py-0.5 rounded-xs tracking-wide uppercase">
+                      Pending Approval
+                    </span>
+                  </div>
                   <span className="font-body-sm text-body-sm text-on-surface-variant">
-                    Instant dispatch for sketches & queries
+                    Configured to +91 99411 21111; phone & email fully confirmed
                   </span>{" "}
                 </div>{" "}
               </div>{" "}
@@ -222,55 +226,29 @@ export function ContactMobileScreen() {
               </div>{" "}
               <div className="flex flex-col gap-2">
                 {" "}
-                <label className="font-label-ui text-label-ui text-primary font-medium">
-                  {" "}
-                  Project Classification <span className="text-error font-body-sm">*</span>{" "}
-                </label>{" "}
-                <div className="grid grid-cols-2 gap-2" id="project-type-selector">
-                  {" "}
-                  <button
-                    className="project-pill active-pill py-2.5 px-space-sm rounded-lg bg-primary text-on-primary font-label-ui text-label-ui text-center shadow-xs flex items-center justify-center gap-1.5 transition-all"
-                    onClick={(e) => S.current.h1?.(e)}
-                    type="button"
-                  >
-                    {" "}
-                    <span className="material-symbols-outlined text-[16px]">domain</span>{" "}
-                    <span>Construction</span>{" "}
-                  </button>{" "}
-                  <button
-                    className="project-pill py-2.5 px-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-label-ui text-label-ui text-center shadow-xs flex items-center justify-center gap-1.5 transition-all"
-                    onClick={(e) => S.current.h2?.(e)}
-                    type="button"
-                  >
-                    {" "}
-                    <span className="material-symbols-outlined text-[16px]">explore</span>{" "}
-                    <span>Vastu Planning</span>{" "}
-                  </button>{" "}
-                  <button
-                    className="project-pill py-2.5 px-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-label-ui text-label-ui text-center shadow-xs flex items-center justify-center gap-1.5 transition-all"
-                    onClick={(e) => S.current.h3?.(e)}
-                    type="button"
-                  >
-                    {" "}
-                    <span className="material-symbols-outlined text-[16px]">handyman</span>{" "}
-                    <span>Stone Carving</span>{" "}
-                  </button>{" "}
-                  <button
-                    className="project-pill py-2.5 px-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-label-ui text-label-ui text-center shadow-xs flex items-center justify-center gap-1.5 transition-all"
-                    onClick={(e) => S.current.h4?.(e)}
-                    type="button"
-                  >
-                    {" "}
-                    <span className="material-symbols-outlined text-[16px]">history_edu</span>{" "}
-                    <span>Restoration</span>{" "}
-                  </button>{" "}
-                </div>{" "}
-                <input
+                <label className="font-label-ui text-label-ui text-primary font-medium flex items-center justify-between" htmlFor="selected-project-type">
+                  <span>Project Classification & Service</span>
+                  <span className="text-error font-body-sm">*</span>
+                </label>
+                <select
                   id="selected-project-type"
                   name="project_type"
-                  type="hidden"
-                  defaultValue="Temple Construction"
-                />{" "}
+                  defaultValue="TEMPLE CONSTRUCTION & SACRED ARCHITECTURE — Complete Temple Construction (Design to Kalasha)"
+                  className="w-full bg-surface-container-lowest text-on-surface px-space-md py-3 rounded-lg font-body-md text-body-md border border-gold/30 focus:outline-hidden focus:bg-surface-bright transition-colors shadow-xs"
+                >
+                  {SERVICE_CATEGORIES.map((cat) => (
+                    <optgroup key={cat.id} label={`Section ${cat.code}: ${cat.title}`}>
+                      {getServicesByCategory(cat.id).map((s) => (
+                        <option key={s.id} value={`${cat.title} — ${s.name}`}>
+                          {s.name}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
+                <p className="font-body-sm text-[11px] text-on-surface-variant">
+                  Select from all 6 categories & 42 official services
+                </p>{" "}
               </div>{" "}
               <div className="flex flex-col gap-1">
                 {" "}
@@ -388,7 +366,7 @@ export function ContactMobileScreen() {
               <div className="flex flex-col text-on-surface font-body-sm">
                 {" "}
                 <span className="font-semibold text-primary">
-                  Vishwa Vaidika Sanatan Hindu Temple Heritage Pvt. Ltd.
+                  Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited
                 </span>{" "}
                 <span>Destination Center 2, Nanded City, Sinhagad Road,</span>{" "}
                 <span>Pune – 411068, Maharashtra, India.</span>{" "}
@@ -421,15 +399,22 @@ export function ContactMobileScreen() {
                     Direct Desk
                   </span>{" "}
                 </div>{" "}
-                <a
-                  className="font-body-sm font-semibold text-primary underline underline-offset-2"
-                  href="tel:9941121111"
-                >
-                  {" "}
-                  9941121111{" "}
-                </a>{" "}
+                <div className="flex flex-col gap-0.5">
+                  <a
+                    className="font-body-sm font-semibold text-primary underline underline-offset-2"
+                    href="tel:+919941121111"
+                  >
+                    Primary: +91 99411 21111
+                  </a>
+                  <a
+                    className="font-body-sm font-semibold text-primary underline underline-offset-2"
+                    href={PHONE_SECONDARY_HREF}
+                  >
+                    Secondary: {PHONE_SECONDARY}
+                  </a>
+                </div>
                 <span className="font-body-sm text-[11px] text-on-surface-variant">
-                  Council Secretariat
+                  Council Secretariat & Atelier
                 </span>{" "}
               </div>{" "}
             </div>{" "}

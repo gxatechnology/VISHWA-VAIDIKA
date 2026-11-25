@@ -1178,20 +1178,20 @@ export function TempleConstructionScreen() {
                 <div className="pt-6 flex flex-wrap items-center gap-8 text-sandstone-surface font-body-sm text-[13px]">
                   {" "}
                   <div className="flex items-center gap-2">
-                    {" "}
                     <span className="material-symbols-outlined text-secondary-fixed text-[20px]">
                       phone_in_talk
-                    </span>{" "}
+                    </span>
                     <span>
-                      Liaison Desk: <strong>+91 99411 21111</strong>
-                    </span>{" "}
-                  </div>{" "}
+                      Primary: <a href="tel:+919941121111" className="hover:underline"><strong>+91 99411 21111</strong></a> • Secondary: <a href="tel:+917517015555" className="hover:underline"><strong>+91 75170 15555</strong></a>
+                    </span>
+                  </div>
                   <div className="flex items-center gap-2">
-                    {" "}
                     <span className="material-symbols-outlined text-secondary-fixed text-[20px]">
                       mark_email_read
-                    </span>{" "}
-                    <span>sthapatya@vishwayvaidika.org</span>{" "}
+                    </span>
+                    <a href="mailto:contact@vishwavaidika.com" className="hover:underline">
+                      contact@vishwavaidika.com
+                    </a>
                   </div>{" "}
                 </div>{" "}
               </div>{" "}

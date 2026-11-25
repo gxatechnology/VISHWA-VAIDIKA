@@ -21,7 +21,7 @@ export function LeadershipScreen() {
               </span>{" "}
               <span className="text-stone-hairline text-body-sm">·</span>{" "}
               <span className="font-label-monument text-label-monument uppercase tracking-[0.14em] text-on-surface-variant">
-                Vishwa Vaidika Sanatan Hindu Temple Heritage
+                Vishwa Vaidika Sanatan Hindu Temple Heritage Private Limited
               </span>{" "}
             </div>{" "}
             <div className="flex items-center gap-3">

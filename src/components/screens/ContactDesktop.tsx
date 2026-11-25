@@ -204,108 +204,26 @@ export function ContactDesktopScreen() {
                         Select primary directive
                       </span>{" "}
                     </div>{" "}
-                    <div
-                      className="grid grid-cols-1 sm:grid-cols-2 gap-2"
-                      id="project-type-selector"
-                    >
-                      {" "}
-                      <label className="flex items-center gap-space-sm p-3 rounded-xs bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors has-[:checked]:bg-secondary-fixed has-[:checked]:shadow-xs">
-                        {" "}
-                        <input
-                          defaultChecked
-                          className="w-4 h-4 accent-primary"
-                          name="project_type"
-                          type="radio"
-                          defaultValue="complete_temple"
-                        />{" "}
-                        <span className="font-body-sm text-body-sm font-medium text-on-surface">
-                          Complete Temple Construction
-                        </span>{" "}
-                      </label>{" "}
-                      <label className="flex items-center gap-space-sm p-3 rounded-xs bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors has-[:checked]:bg-secondary-fixed has-[:checked]:shadow-xs">
-                        {" "}
-                        <input
-                          className="w-4 h-4 accent-primary"
-                          name="project_type"
-                          type="radio"
-                          defaultValue="architectural_vastu"
-                        />{" "}
-                        <span className="font-body-sm text-body-sm font-medium text-on-surface">
-                          Architectural Planning & Vastu
-                        </span>{" "}
-                      </label>{" "}
-                      <label className="flex items-center gap-space-sm p-3 rounded-xs bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors has-[:checked]:bg-secondary-fixed has-[:checked]:shadow-xs">
-                        {" "}
-                        <input
-                          className="w-4 h-4 accent-primary"
-                          name="project_type"
-                          type="radio"
-                          defaultValue="rajagopuram"
-                        />{" "}
-                        <span className="font-body-sm text-body-sm font-medium text-on-surface">
-                          Rajagopuram Gateway Entrance
-                        </span>{" "}
-                      </label>{" "}
-                      <label className="flex items-center gap-space-sm p-3 rounded-xs bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors has-[:checked]:bg-secondary-fixed has-[:checked]:shadow-xs">
-                        {" "}
-                        <input
-                          className="w-4 h-4 accent-primary"
-                          name="project_type"
-                          type="radio"
-                          defaultValue="vigraha"
-                        />{" "}
-                        <span className="font-body-sm text-body-sm font-medium text-on-surface">
-                          Murti & Vigraha Sculpting
-                        </span>{" "}
-                      </label>{" "}
-                      <label className="flex items-center gap-space-sm p-3 rounded-xs bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors has-[:checked]:bg-secondary-fixed has-[:checked]:shadow-xs">
-                        {" "}
-                        <input
-                          className="w-4 h-4 accent-primary"
-                          name="project_type"
-                          type="radio"
-                          defaultValue="stone_craft"
-                        />{" "}
-                        <span className="font-body-sm text-body-sm font-medium text-on-surface">
-                          Traditional Stone Craftsmanship
-                        </span>{" "}
-                      </label>{" "}
-                      <label className="flex items-center gap-space-sm p-3 rounded-xs bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors has-[:checked]:bg-secondary-fixed has-[:checked]:shadow-xs">
-                        {" "}
-                        <input
-                          className="w-4 h-4 accent-primary"
-                          name="project_type"
-                          type="radio"
-                          defaultValue="restoration"
-                        />{" "}
-                        <span className="font-body-sm text-body-sm font-medium text-on-surface">
-                          Heritage Restoration & Anastylosis
-                        </span>{" "}
-                      </label>{" "}
-                      <label className="flex items-center gap-space-sm p-3 rounded-xs bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors has-[:checked]:bg-secondary-fixed has-[:checked]:shadow-xs">
-                        {" "}
-                        <input
-                          className="w-4 h-4 accent-primary"
-                          name="project_type"
-                          type="radio"
-                          defaultValue="ghat"
-                        />{" "}
-                        <span className="font-body-sm text-body-sm font-medium text-on-surface">
-                          Riverfront Ghat Construction
-                        </span>{" "}
-                      </label>{" "}
-                      <label className="flex items-center gap-space-sm p-3 rounded-xs bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors has-[:checked]:bg-secondary-fixed has-[:checked]:shadow-xs">
-                        {" "}
-                        <input
-                          className="w-4 h-4 accent-primary"
-                          name="project_type"
-                          type="radio"
-                          defaultValue="private_mandir"
-                        />{" "}
-                        <span className="font-body-sm text-body-sm font-medium text-on-surface">
-                          Private Stone Mandir / Villa Sanctum
-                        </span>{" "}
-                      </label>{" "}
+                    <div className="flex flex-col gap-1.5" id="project-type-selector">
+                      <select
+                        name="project_type"
+                        id="project_type"
+                        defaultValue="TEMPLE CONSTRUCTION & SACRED ARCHITECTURE — Complete Temple Construction (Design to Kalasha)"
+                        className="w-full bg-surface-container-low text-on-surface px-space-md py-3 rounded-xs font-body-md text-body-md border border-gold/30 focus:outline-hidden focus:bg-surface-container-lowest focus:border-primary transition-all cursor-pointer"
+                      >
+                        {SERVICE_CATEGORIES.map((cat) => (
+                          <optgroup key={cat.id} label={`Section ${cat.code}: ${cat.title}`}>
+                            {getServicesByCategory(cat.id).map((s) => (
+                              <option key={s.id} value={`${cat.title} — ${s.name}`}>
+                                {s.name}
+                              </option>
+                            ))}
+                          </optgroup>
+                        ))}
+                      </select>
+                      <p className="font-body-sm text-[12px] text-on-surface-variant">
+                        Select from all 6 corporate sections and 42 official construction, infrastructure & stonework services.
+                      </p>
                     </div>{" "}
                   </div>{" "}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-1">
@@ -573,48 +491,50 @@ export function ContactDesktopScreen() {
                     </div>{" "}
                   </div>{" "}
                   <div className="flex items-start gap-space-sm">
-                    {" "}
                     <span className="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0">
                       call
-                    </span>{" "}
+                    </span>
                     <div>
-                      {" "}
                       <p className="font-label-ui text-label-ui text-primary uppercase">
                         Direct Project Switchboard
-                      </p>{" "}
-                      <a
-                        className="font-body-md text-body-md text-primary font-semibold hover:text-secondary transition-colors inline-block mt-0.5"
-                        href="tel:+919941121111"
-                      >
-                        {" "}
-                        +91 99411 21111{" "}
-                      </a>{" "}
-                      <p className="font-body-sm text-body-sm text-on-surface-variant text-[12px]">
+                      </p>
+                      <div className="flex flex-col gap-0.5 mt-0.5">
+                        <a
+                          className="font-body-md text-body-md text-primary font-semibold hover:text-secondary transition-colors inline-block"
+                          href="tel:+919941121111"
+                        >
+                          Primary: +91 99411 21111
+                        </a>
+                        <a
+                          className="font-body-sm text-body-sm text-primary font-semibold hover:text-secondary transition-colors inline-block"
+                          href={PHONE_SECONDARY_HREF}
+                        >
+                          Secondary: {PHONE_SECONDARY}
+                        </a>
+                      </div>
+                      <p className="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-0.5">
                         (Mon–Sat: 09:00 IST – 19:30 IST)
-                      </p>{" "}
-                    </div>{" "}
-                  </div>{" "}
+                      </p>
+                    </div>
+                  </div>
                   <div className="flex items-start gap-space-sm">
-                    {" "}
                     <span className="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0">
                       mark_email_read
-                    </span>{" "}
+                    </span>
                     <div>
-                      {" "}
                       <p className="font-label-ui text-label-ui text-primary uppercase">
-                        Direct Trust Liaison Desk
-                      </p>{" "}
+                        Direct Corporate Email
+                      </p>
                       <a
                         className="font-body-md text-body-md text-primary font-medium hover:underline inline-block mt-0.5"
-                        href="mailto:contact@vishwaveidika.com"
+                        href="mailto:contact@vishwavaidika.com"
                       >
-                        {" "}
-                        contact@vishwaveidika.com{" "}
-                      </a>{" "}
+                        contact@vishwavaidika.com
+                      </a>
                       <p className="font-body-sm text-body-sm text-on-surface-variant text-[12px]">
-                        Trust deed proposals & RFP submissions
-                      </p>{" "}
-                    </div>{" "}
+                        Corporate inquiries, proposals & tenders
+                      </p>
+                    </div>
                   </div>{" "}
                 </div>{" "}
               </div>{" "}
@@ -622,26 +542,20 @@ export function ContactDesktopScreen() {
                 {" "}
                 <div className="flex items-center gap-space-sm mb-space-sm">
                   {" "}
-                  <div className="w-10 h-10 rounded-4xl bg-whatsapp text-white flex items-center justify-center shrink-0 shadow-xs">
-                    {" "}
-                    <span className="material-symbols-outlined text-[22px]">chat</span>{" "}
-                  </div>{" "}
+                  <div className="w-10 h-10 rounded-4xl bg-[#1F7A42]/15 text-[#1F7A42] flex items-center justify-center shrink-0 shadow-xs">
+                    <span className="material-symbols-outlined text-[22px]">chat</span>
+                  </div>
                   <div>
-                    {" "}
-                    <span className="inline-block bg-secondary-fixed text-on-secondary-fixed-variant px-2 py-0.5 rounded-xs font-label-monument text-[10px] tracking-wider uppercase font-bold">
-                      {" "}
-                      Priority Trustee Access{" "}
-                    </span>{" "}
+                    <span className="inline-block bg-amber-100 text-amber-800 border border-amber-300 px-2 py-0.5 rounded-xs font-label-monument text-[10px] tracking-wider uppercase font-bold">
+                      Awaiting Owner Confirmation
+                    </span>
                     <h4 className="font-title-editorial text-title-editorial text-primary leading-tight">
-                      Direct WhatsApp Line
-                    </h4>{" "}
-                  </div>{" "}
-                </div>{" "}
+                      WhatsApp Liaison Channel
+                    </h4>
+                  </div>
+                </div>
                 <p className="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
-                  {" "}
-                  Dedicated channel reserved for Temple Trustees, Peethadhipatis, and Mahants
-                  seeking swift architectural counsel, stone sample dispatches, or emergency sanctum
-                  restorations.{" "}
+                  Configured with Primary Corporate Line (+91 99411 21111) for quick project drafts. Direct phone calls and official email remain fully confirmed and guaranteed.
                 </p>{" "}
                 <a
                   className="w-full bg-[#1F7A42] hover:bg-[#185e33] text-white px-space-md py-space-sm rounded-xs font-label-monument text-label-monument tracking-wider uppercase transition-colors flex items-center justify-center gap-2 shadow-xs"
@@ -856,42 +770,43 @@ export function ContactDesktopScreen() {
           <div className="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
             {" "}
             <img
-              alt="Emblem Watermark"
-              className="w-[600px] h-[600px] object-contain rounded-full aspect-square"
-              src={IMG.logo}
-            />{" "}
-          </div>{" "}
+              alt="Crest Watermark"
+              className="w-auto max-w-xl h-auto max-h-[500px] object-contain opacity-80"
+              src={IMG.crest}
+            />
+          </div>
           <div className="relative max-w-4xl mx-auto px-gutter text-center space-y-space-md">
-            {" "}
             <span className="font-label-monument text-label-monument uppercase tracking-widest text-secondary-fixed">
               Global Philanthropic Patron Concierge
-            </span>{" "}
+            </span>
             <h2 className="font-headline-lg text-headline-lg font-normal text-white">
-              {" "}
-              Are You a Trustee or Mahant Planning a Monumental Kshetra?{" "}
-            </h2>{" "}
+              Are You a Trustee or Mahant Planning a Monumental Kshetra?
+            </h2>
             <p className="font-body-lg text-body-lg text-primary-fixed max-w-2xl mx-auto">
-              {" "}
               We arrange confidential in-person audience with our Chief Sthapati and executive
-              geotechnical directorate anywhere across Bharat or abroad.{" "}
-            </p>{" "}
+              geotechnical directorate anywhere across Bharat or abroad.
+            </p>
             <div className="pt-space-sm flex flex-wrap items-center justify-center gap-space-md">
-              {" "}
               <a
                 className="px-space-lg py-space-sm bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-fixed-dim rounded-xs font-label-monument text-label-monument uppercase tracking-wider font-semibold transition-colors flex items-center gap-2"
                 href="tel:+919941121111"
               >
-                {" "}
-                <span className="material-symbols-outlined text-[18px]">phone_in_talk</span>{" "}
-                <span>Speak Directly with Sthapati Cell</span>{" "}
-              </a>{" "}
+                <span className="material-symbols-outlined text-[18px]">phone_in_talk</span>
+                <span>Primary: +91 99411 21111</span>
+              </a>
+              <a
+                className="px-space-lg py-space-sm bg-primary-container text-white hover:bg-primary-fixed-dim hover:text-on-primary-fixed rounded-xs font-label-monument text-label-monument uppercase tracking-wider font-semibold transition-colors flex items-center gap-2 border border-gold/40"
+                href={PHONE_SECONDARY_HREF}
+              >
+                <span className="material-symbols-outlined text-[18px]">phone_enabled</span>
+                <span>Secondary: {PHONE_SECONDARY}</span>
+              </a>
               <a
                 className="px-space-lg py-space-sm bg-primary-container text-white hover:bg-primary-fixed-dim hover:text-on-primary-fixed rounded-xs font-label-monument text-label-monument uppercase tracking-wider font-semibold transition-colors flex items-center gap-2"
-                href="mailto:contact@vishwaveidika.com?subject=Confidential%20Temple%20Masterplan%20Enquiry"
+                href="mailto:contact@vishwavaidika.com?subject=Confidential%20Temple%20Masterplan%20Enquiry"
               >
-                {" "}
-                <span className="material-symbols-outlined text-[18px]">mail</span>{" "}
-                <span>Dispatch Executive Charter</span>{" "}
+                <span className="material-symbols-outlined text-[18px]">mail</span>
+                <span>Dispatch Corporate Charter</span>
               </a>{" "}
             </div>{" "}
           </div>{" "}
